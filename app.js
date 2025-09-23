@@ -1,9 +1,16 @@
 import express from "express";
-import { productRoutes } from "./routes/ProductRoutes.js";
-import { initOCR } from "./service/ocrService.js";   // 👈 import OCR init
-import { getuserdata } from "./routes/user.js";
+import dotenv from 'dotenv';
+import { productRoutes } from "./src/routes/ProductRoutes.js";
+import { getuserdata } from "./src/routes/UserRoutes.js";
+import connectDB from "./src/config/db.js";
+import { initOCR } from "./src/service/ocrService.js";
+
 
 const app = express();
+dotenv.config();
+
+
+connectDB();
 
 app.use(express.json());
 
@@ -25,4 +32,8 @@ app.get("/", (req, res) => {
   res.send("API is working ✅");
 });
 
-export default app;
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${PORT}`);
+});
+

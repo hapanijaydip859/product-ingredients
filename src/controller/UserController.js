@@ -1,4 +1,4 @@
-import User from "../model/user.js";
+import User from "../model/UserModel.js";
 import jwt from "jsonwebtoken";
 // import { validationResult } from "express-validator";
 
@@ -42,19 +42,19 @@ export const createUser = async (req, res) => {
 };
 
 export const userFind = async (req, res) => {
-    try {
-        const userfind = await User.find()
-        if (!userfind) { return res.status(402).json({ message: 'user not found' }) }
-        res.status(202).json({
-            status: 'success',
-            message: 'user find',
-            data: userfind
+  try {
+    const userfind = await User.find()
+    if (!userfind) { return res.status(402).json({ message: 'user not found' }) }
+    res.status(202).json({
+      status: 'success',
+      message: 'user find',
+      data: userfind
 
-        })
-    } catch (error) {
-        res.status(402).json({
-            status: "fail",
-            message: error.message
-        })
-    }
+    })
+  } catch (error) {
+    res.status(402).json({
+      status: "fail",
+      message: error.message
+    })
+  }
 }

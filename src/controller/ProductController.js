@@ -1,5 +1,5 @@
 import ProductModel from "../model/ProductModel.js";
-import User from "../model/user.js";
+import User from "../model/UserModel.js";
 import { runOCR } from "../service/ocrService.js";
 
 export const analyzeProduct = async (req, res) => {

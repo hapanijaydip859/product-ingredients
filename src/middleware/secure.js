@@ -1,6 +1,6 @@
 
 import jwt from "jsonwebtoken"
-import User from "../model/user.js";
+import User from "../model/UserModel.js";
 export const SecureToken = async (req, res, next) => {
     try {
         let token = req.headers.authorization
