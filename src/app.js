@@ -1,7 +1,7 @@
 import express from "express";
-import { productRoutes } from "./src/routes/ProductRoutes.js";
-import { initOCR } from "./src/service/ocrService.js";   // 👈 import OCR init
-import { getuserdata } from "./src/routes/user.js";
+import { productRoutes } from "./routes/ProductRoutes.js";
+import { initOCR } from "./service/ocrService.js";   // 👈 import OCR init
+import { getuserdata } from "./routes/user.js";
 
 const app = express();
 
