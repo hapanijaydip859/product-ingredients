@@ -53,7 +53,7 @@ export const getUsers = async (req, res) => {
     if (!data) {
       // Default → 5 records
       products = await ProductModel.find({ UserData: userId })
-        .sort({ createdAt: 1 })
+        .sort({ createdAt: -1 })
         .limit(5)
         .populate("UserData", "name email"); // populate with only name & email
     } else if (data === "all") {

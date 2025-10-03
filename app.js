@@ -4,10 +4,10 @@ import { productRoutes } from "./src/routes/ProductRoutes.js";
 import { getuserdata } from "./src/routes/UserRoutes.js";
 import connectDB from "./src/config/db.js";
 import { initOCR } from "./src/service/ocrService.js";
+dotenv.config();
 
 
 const app = express();
-dotenv.config();
 
 
 connectDB();
